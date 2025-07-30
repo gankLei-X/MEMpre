@@ -8,3 +8,6 @@ MEMpre is a novel Transformer-based framework that leverages the AlphaFold-deriv
 
 __Overflow of the proposed MEMpre for membrane protein type prediction__. The primary protein sequence is ﬁrst processed by a pre‐trained ProtT5 followed by a fully connected block to generate the 3D structural feature, where the parameters of prostT5 model keep frozen during subsequent training. In parallel, the sequence is also encoded into a numerical representation using both one‐hot encoding and physicochemical property‐based encoding. This representation is then processed by a residual transformer block to capture long‐range sequence dependencies, generating the sequence feature. Finally, a linear layer integrates 3D structural feature and sequence feature to produce the ﬁnal prediction. 
 
+# Contact
+
+Please contact me if you have any help: gl5121405@gmail.com
