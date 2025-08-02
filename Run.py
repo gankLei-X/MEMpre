@@ -28,7 +28,7 @@ def preprocess_data():
     y_train = np.loadtxt('Dataset/trainLabel.txt') - 1
     y_test = np.loadtxt('Dataset/testLabel.txt') - 1
 
-    embed = np.loadtxt('Auto_enconder')
+    embed = np.loadtxt('autoEnconder.txt')
     embed = np.hstack((embed, np.zeros((EMBED_DIM, 1))))
 
     train_embed = vec_to_onehot(X_train, len(y_train), MAX_SEQUENCE_LEN, embed, EMBED_DIM)
