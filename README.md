@@ -10,11 +10,11 @@ __Overflow of the proposed MEMpre for membrane protein type prediction__. The p
 
 # Requirement
 
-    python == 3.5, 3.6 or 3.7
+    python >= 3.8
 
     conda install pytorch torchvision torchaudio pytorch-cuda=12.4 -c pytorch -c nvidia
-    
-    conda install opencv=4.5.3 numpy=1.8.0 matplotlib=2.2.2 scipy=1.12.0
+
+    conda install numpy=1.24.3 matplotlib=3.7.1 scipy=1.10.1 transformers=4.30.2 sentencepiece
 
     conda install scikit-learn=1.4.1
 
@@ -24,21 +24,25 @@ __Overflow of the proposed MEMpre for membrane protein type prediction__. The p
 
 cd to the MEMpre fold
 
-If you want to predict membrane protein type, run:
+If you want to predict membrane protein type, taking the test.fasta as an example, run:
 
+    python predict.py --input_fasta Dataset/test.fasta --output_path output.txt --t5_modal_path .../ProstT5 --model_load_path bestParameter.pt 
 
-
-Output file includes three columns, position, residue type and score. The value range of score is [0, 1], with values closer to 1 indicating the site is more likely to be phosphorylated.
+The output is the predicted membrane type with the shape of [N, 1], where the N is the number of inputting sequence. 
 
 ## Train For Your own Data
 
 cd to the MEMpre fold
 
-If you want to train for membrane protein type　prediction, run:
+If you want to train for membrane protein type prediction, taking the train.fasta as an example, run:
 
-## Acknowledge
+    python train.py --train_fasta Dataset/train.fasta --train_label Dataset/trainLable.txt --model_save_path bestParameter.pt
 
-Special thanks to the developers of ProstT5 for their groundbreaking work in protein language modeling:　Heinzinger, M., Weissenow, K., Sanchez, J. G., Henkel, A., Mirdita, M., Steinegger, M., & Rost, B.
+After training, the parameter of model with the best validation accuracy will be saved to the specified bestParameter.pt file.
+
+# Acknowledge
+
+Special thanks to the developers of ProstT5 for their groundbreaking work in protein language modeling.
 
 # Contact
 
