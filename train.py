@@ -26,7 +26,7 @@ def parse_args():
                         help='Path to training set label file')
     parser.add_argument('--data_dir', type=str, default='Dataset',
                         help='Dataset directory for saving feature cache files')
-    parser.add_argument('--t5_model_path', type=str, default='/home/gl/Desktop/ProstT5',
+    parser.add_argument('--t5_model_path', type=str, 
                         help='Local path to ProstT5 pretrained model')
     parser.add_argument('--autoencoder_path', type=str, default='autoEnconder.txt',
                         help='Path to autoencoder feature file')
