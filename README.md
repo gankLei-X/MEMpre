@@ -12,7 +12,7 @@ __Overflow of the proposed MEMpre for membrane protein type prediction__. The p
 
     python >= 3.8
 
-    conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia
+    conda install pytorch torchvision torchaudio pytorch-cuda=12.1 -c pytorch -c nvidia sentencepiece
 
     conda install numpy=1.26.4 matplotlib scipy=1.12.0 transformers=4.37.2 
 
