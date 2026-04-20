@@ -26,7 +26,7 @@ cd to the MEMpre fold
 
 If you want to predict membrane protein type, taking the test.fasta as an example, run:
 
-    python predict.py --input_fasta Dataset/test.fasta --output_path output.txt --t5_modal_path .../ProstT5 --model_load_path bestParameter.pt 
+    python predict.py --input_fasta Dataset/test.fasta --output_path output.txt --t5_model_path .../ProstT5 --model_load_path bestParameter.pt 
 
 The output is the predicted membrane type with the shape of [N, 1], where the N is the number of inputting sequence. 
 
@@ -36,7 +36,7 @@ cd to the MEMpre fold
 
 If you want to train for membrane protein type prediction, taking the train.fasta as an example, run:
 
-    python train.py --train_fasta Dataset/train.fasta --train_label Dataset/trainLable.txt --model_save_path bestParameter.pt
+    python train.py --train_fasta Dataset/train.fasta --train_label Dataset/trainLable.txt --t5_model_path .../ProstT5 --model_save_path bestParameter.pt
 
 After training, the parameter of model with the best validation accuracy will be saved to the specified bestParameter.pt file.
 
